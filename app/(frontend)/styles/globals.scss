@@ -1,0 +1,19 @@
+/* src/styles/global.scss */
+
+@use './reset' as *;
+@use './variables' as *;
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family-secondary;
+  font-size: $font-size-base;
+  font-weight: 400;
+  background-color: $color-primary-light;
+  color: $color-primary-dark;
+  line-height: $line-height-normal;
+}

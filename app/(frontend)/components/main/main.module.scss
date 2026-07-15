@@ -1,0 +1,107 @@
+@use '../../styles/variables' as *;
+
+.main {
+    position: relative;
+    background-color: $color-primary;
+
+    &__star {
+        position: absolute;
+        z-index: 2;
+        pointer-events: none; // 👈 чтобы не мешали кликам
+
+        &--small {
+        top: 40%; // 👈 примерно 431px от верха секции
+        left: 52.4%; // 👈 (750 - 100) / 1240 * 100%
+        width: 56px;
+        height: 56px;
+        }
+
+        &--big {
+        top: 20%; // 👈 примерно 220px от верха секции
+        right: 6.9%; // 👈 (1440 - 1255) / 1440 * 100% ≈ 12.8% от правого края
+        width: 104px;
+        height: 104px;
+        }
+    }
+
+    &__hero {
+        padding: 105px 0;
+        display: flex;
+        gap: 40px; 
+        background-image: url('/images/main-bckg.png');
+        background-size: 50% auto; 
+        background-position: right bottom; 
+        background-repeat: no-repeat; 
+        min-height: 400px; 
+
+        &-content{
+            row-gap: 32px;
+            display: grid;
+            align-content: start;
+            z-index: 1;
+        }
+
+        &-btn{
+            padding: 15px 67px;
+            width: fit-content;
+            background: $color-primary-dark;
+            color: $color-primary-light;
+            border-radius: $border-radius-xxl;
+            margin-bottom: 16px;
+
+            &:hover{
+                transition: 0.5s ease;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+
+    &__title{
+        font-size: $font-size-xxxxxl;
+        font-weight: $font-weight-bold;
+        max-width: 577px;
+        text-transform: uppercase;
+        line-height: $line-height-tight;
+    }
+
+    &__description{
+        max-width: 555px;
+        opacity: 0.6;
+    }
+
+    &__benefits{
+        display: flex;
+        gap: 32px;
+    }
+
+    &__benefit{
+        text-align: start;
+        border-left: 2px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 0 0px 32px;
+
+        &-title{
+            font-size: $font-size-xxxl;
+            margin-bottom: 15px;
+        }
+        &-description{
+            color: $color-primary-dark;
+            opacity: 0.6;
+        }
+    }
+
+    &__benefit:first-child{
+        border-left: none;
+        padding-left: 0;
+    }
+
+    &__brands-wrapper{
+        padding: 43px 0;
+        background-color: $color-primary-dark;
+    }
+    &__brands{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
