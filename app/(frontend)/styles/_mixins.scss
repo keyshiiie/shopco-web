@@ -1,0 +1,108 @@
+@use './variables' as *;
+
+// Миксин для разных начертаний
+@mixin font-style($weight: light, $size: base) {
+    line-height: $line-height-normal;
+    
+    // Толщина
+    @if $weight == light {
+        font-weight: $font-weight-light;
+    } @else if $weight == regular {
+        font-weight: $font-weight-regular;
+    } @else if $weight == medium {
+        font-weight: $font-weight-medium;
+    } @else if $weight == semibold {
+        font-weight: $font-weight-semibold;
+    } @else if $weight == bold {
+        font-weight: $font-weight-bold;
+    } @else if $weight == extrabold {
+        font-weight: $font-weight-extrabold;
+    } @else if $weight == black {
+        font-weight: $font-weight-black;
+    }
+    
+    // Размер
+    @if $size == xs {
+        font-size: $font-size-xs;
+    } @else if $size == sm {
+        font-size: $font-size-sm;
+    } @else if $size == base {
+        font-size: $font-size-base;
+    } @else if $size == md {
+        font-size: $font-size-md;
+    } @else if $size == lg {
+        font-size: $font-size-lg;
+    } @else if $size == xl {
+        font-size: $font-size-xl;
+    } @else if $size == 2xl {
+        font-size: $font-size-2xl;
+    } @else if $size == 3xl {
+        font-size: $font-size-3xl;
+    } @else if $size == 4xl {
+        font-size: $font-size-4xl;
+    } @else if $size == 5xl {
+        font-size: $font-size-5xl;
+    }
+}
+
+// Базовые flex-миксины
+@mixin flex($display: null, $align: null, $justify: null, $direction: null, $wrap: null) {
+    @if $display {
+        display: $display;
+    }
+
+    @if $justify {
+        justify-content: $justify;
+    }
+    
+    @if $align {
+        align-items: $align;
+    }
+    
+    @if $direction {
+        flex-direction: $direction;
+    }
+    
+    @if $wrap {
+        flex-wrap: $wrap;
+    }
+}
+
+@mixin size($width:null,$heigh:null){
+    @if $width {
+        width: $width;
+    }
+
+    @if $heigh {
+        heigh: $heigh;
+    }
+}
+
+// для кнопки с фоном
+@mixin button-fill($bg-color, $hover-color, $text-color: $color-white) {
+    background: $bg-color;
+    color: $text-color;
+    
+    &:hover {
+      background: $hover-color;
+      border-color: $hover-color;
+    }
+}
+
+// Миксин для кнопки с иконкой
+@mixin button-with-icon($icon-path, $icon-width: 18px, $icon-height: 18px) {
+    display: inline-flex;
+    align-items: center;
+    gap: $gap-xs;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        width: $icon-width;
+        height: $icon-height;
+        background-image: url($icon-path);
+        background-size: contain;
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+    }
+}

@@ -1,9 +1,10 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/placeholders' as *;
 
 .promotion {
     padding: 10px 0;
     background-color: $color-primary-dark;
-    transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
     transform: translateY(0);
 
@@ -13,31 +14,21 @@
     }
 
     &__row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex(flex,center,space-between);
         width: 100%;
     }
 
     &__info {
-        display: flex;
-        align-items: center;
+        @include flex(flex,center);
         gap: 5px;
         margin: 0 auto;
 
     &-text {
-        color: $color-primary-light;
-        font-weight: 200;
-        opacity: 0.8;
-        font-size: $font-size-sm;
+        @extend %hint-text;
     }
 
     &-link {
-        color: $color-primary-light;
-        font-weight: 600;
-        font-size: $font-size-sm;
-        text-decoration: underline;
-        cursor: pointer;
+        @extend %hint-link;
 
         &:hover {
             opacity: 0.8;
@@ -46,15 +37,9 @@
     }
 
     &__clear-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
         color: $color-primary-light;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(flex,center,center);
         padding: 4px;
-        flex-shrink: 0;
 
         &:hover {
             opacity: 0.7;

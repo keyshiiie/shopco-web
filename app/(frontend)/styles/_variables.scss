@@ -3,6 +3,7 @@
 $color-primary: #F2F0F1;      // основной цвет бренда 
 $color-primary-dark: #000000; // темный
 $color-primary-light: #ffffff; // светлый
+$color-hover: #5E5E5E; // светлый
 
 $color-feedback-primary: #FFC633;      // акцентный для отзыва
 $color-feedback-secondary: #01AB31; // тоже для отзыва
@@ -10,9 +11,8 @@ $color-sale: #FF3333; // акцент на скидку
 $color-rice-sale: #999999;
 
 // Акцентные
-
 // ТИПОГРАФИЯ 
-$font-family-primary: 'Oswald', sans-serif;
+$font-family-primary: 'Alexandria', sans-serif;
 $font-family-secondary: 'Open Sans', sans-serif;
 
 $font-size-xs: 12px;
@@ -21,16 +21,18 @@ $font-size-base: 16px;
 $font-size-md: 18px;
 $font-size-lg: 20px;
 $font-size-xl: 24px;
-$font-size-xxl: 32px;
-$font-size-xxxl: 40px;
-$font-size-xxxxl: 48px;
-$font-size-xxxxxl: 64px;
+$font-size-2xl: 32px;
+$font-size-3xl: 40px;
+$font-size-4xl: 48px;
+$font-size-5xl: 64px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
 
 $line-height-tight: 100%;
 $line-height-normal: 140%;

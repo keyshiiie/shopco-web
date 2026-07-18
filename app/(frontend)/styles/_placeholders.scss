@@ -1,0 +1,74 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+%hero-title {
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    @include font-style(black, 5xl)
+}
+
+%logo {
+    font-family: $font-family-primary;
+    color: $color-primary-dark;
+    text-transform: uppercase;
+    @include font-style(black, 2xl)
+}
+
+%section-title {
+    font-family: $font-family-primary;
+    @include font-style(extrabold, 4xl)
+}
+
+%card-title {
+    font-family: $font-family-primary;
+    @include font-style(semibold, 3xl)
+}
+
+%text {
+    font-family: $font-family-secondary;
+    color: $color-primary-dark;
+    @include font-style(regular, base)
+}
+
+%counter-text {
+    font-family: $font-family-secondary;
+    color: $color-primary-light;
+    @include font-style(regular, xs)
+}
+
+%text-description {
+    @extend %text;
+    opacity: 0.6;
+}
+
+%text-placeholder {
+    @extend %text;
+    opacity: 0.4;
+}
+
+%hint {
+    font-family: $font-family-secondary;
+    color: $color-primary-light;
+    @include font-style(regular, sm);
+}
+
+%hint-text{
+    @extend %hint;
+    opacity: 0.6;
+}
+
+%hint-link {
+    @extend %hint;
+    text-decoration: underline;
+}
+
+%card-border {
+    border-radius: $border-radius-md;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+%hero-btn {
+    @extend %text;
+    @include button-fill($color-primary-dark, $color-hover, $color-primary-light);
+    transition: 0.5s ease;
+}

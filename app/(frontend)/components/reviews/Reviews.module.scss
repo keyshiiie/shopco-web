@@ -1,0 +1,198 @@
+@use '../../styles/variables' as *;
+
+.reviews {
+  padding: 80px 0;
+  background: $color-primary-light;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: $font-size-xxxxl;
+    font-weight: $font-weight-bold;
+    color: $color-primary-dark;
+    margin: 0;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius-full;
+    border: 1px solid $color-rice-sale;
+    background: $color-primary-light;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+    font-size: $font-size-md;
+    color: $color-primary-dark;
+
+    &:hover:not(:disabled) {
+      background: $color-primary-dark;
+      color: $color-primary-light;
+      border-color: $color-primary-dark;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    margin:  -10px;
+    padding: 20px 0;
+  }
+
+  &__track {
+    display: flex;
+    gap: 20px;
+    transition: transform $transition-slow;
+    padding: 0 10px;
+  }
+
+  &__loading,
+  &__empty {
+    text-align: center;
+    padding: 40px;
+    color: $color-rice-sale;
+    font-size: $font-size-lg;
+    font-family: $font-family-secondary;
+  }
+
+  &__error {
+    text-align: center;
+    padding: 40px;
+    color: $color-sale;
+    font-size: $font-size-lg;
+    font-family: $font-family-secondary;
+  }
+}
+
+.review-card {
+  flex: 0 0 calc(33.333% - 14px);
+  min-width: 280px;
+  padding: 28px 32px;
+  border: 1px solid rgba($color: $color-primary-dark, $alpha: 0.1);
+  border-radius: $border-radius-lg;
+  background: $color-primary-light;
+  transition: box-shadow $transition-base;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 4px;
+    order: 0;
+  }
+
+  .star {
+    color: $color-rice-sale;
+    font-size: $font-size-md;
+
+    &--filled {
+      color: $color-feedback-primary;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    order: 1;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius-full;
+    background: $color-primary-dark;
+    color: $color-primary-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    flex-shrink: 0;
+    font-family: $font-family-primary;
+  }
+
+  &__author-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__author-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  &__author-name {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    color: $color-primary-dark;
+    // Перенос длинных имён
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  &__verified {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__date {
+    font-size: $font-size-xs;
+    color: $color-rice-sale;
+    margin-top: 2px;
+    font-family: $font-family-secondary;
+    // Перенос длинных дат
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  &__content {
+    font-size: $font-size-sm;
+    line-height: $line-height-loose;
+    color: $color-rice-sale;
+    margin: 0;
+    overflow: hidden;
+    font-family: $font-family-secondary;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    order: 3;
+    // Перенос длинных слов
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+}

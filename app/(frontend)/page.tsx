@@ -5,7 +5,7 @@ import Main from './components/main/main';
 import Newarrivals from './components/newarrivals/newarrivals';
 import Topselling from './components/topselling/topselling';
 import DressStyles from './components/dressStyles/dressStyles';
-
+import Reviews from './components/reviews/Reviews';
 
 export default function Home() {
   return (
@@ -13,9 +13,7 @@ export default function Home() {
       <Promotion />
       <Header />
       <Main/>
-      <Newarrivals/>
-      <Topselling/>
-      <DressStyles />
+      
       {/* Остальные секции */}
     </main>
   );

@@ -9,11 +9,43 @@
   padding: 0;
 }
 
+* {
+  transition: all $transition-slow;
+}
+
+html,
+body,
+script,
+style,
+link,
+meta,
+title,
+head,
+svg,
+img,
+video,
+canvas,
+iframe,
+object,
+embed,
+input[type="range"],
+progress,
+meter {
+  transition: none !important;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+.transition-enabled {
+  transition: all $transition-slow;
+}
+
 body {
-  font-family: $font-family-secondary;
-  font-size: $font-size-base;
-  font-weight: 400;
-  background-color: $color-primary-light;
+  font-family: $font-family-primary;
   color: $color-primary-dark;
-  line-height: $line-height-normal;
+  background: $color-primary-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
-import { Oswald, Poiret_One } from 'next/font/google';
+import { Open_Sans, Alexandria } from 'next/font/google';
 import "./styles/globals.scss";
+import "./styles/_reset.scss";
 
-const oswald = Oswald({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '700'],
-  variable: '--font-oswald',
+const alexandria = Alexandria({
+  subsets: ['latin', 'arabic'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-alexandria',
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
 });
 
-const poiretOne = Poiret_One({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400'],
-  variable: '--font-poiret-one',
+const openSans = Open_Sans({
+  subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'latin-ext'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-open-sans',
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${oswald.variable} ${poiretOne.variable}`}>
+    <html lang="ru" className={`${alexandria.variable} ${openSans.variable}`}>
       <body>{children}</body>
     </html>
   );
